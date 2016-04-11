@@ -10,7 +10,8 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "win7-ie11"
-  #config.vm.box_url = "http://aka.ms/vagrant-win7-ie11"
+  config.vm.box_url = "http://aka.ms/vagrant-win7-ie11"
+  config.vm.provision "shell", inline: "cp ./setup/Ninite-Installer.exe c:\Ninite-Installer.exe"
 
   # Use VBoxManage to customize the VM. For example to change memory:
   config.vm.guest = :windows
